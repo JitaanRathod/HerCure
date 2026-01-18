@@ -1,21 +1,33 @@
 import axios from "axios";
 
-const API = axios.create({
+/*
+  Central axios instance for HerCure
+  - Attaches JWT automatically
+  - Used by Cycle, Lifestyle, and future protected APIs
+*/
+
+const api = axios.create({
   baseURL: "http://localhost:5000",
 });
 
-API.interceptors.request.use((req) => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    req.headers.Authorization = `Bearer ${token}`;
-  }
-  return req;
-});
+// Attach JWT token to every request
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
 
-export const registerUser = (userData) => {
-  return API.post("/api/auth/register", userData);
-};
+// -------- AUTH APIs (existing, untouched) --------
+export const loginUser = (data) =>
+  api.post("/api/auth/login", data);
 
-export const loginUser = (userData) => {
-  return API.post("/api/auth/login", userData);
-};
+export const registerUser = (data) =>
+  api.post("/api/auth/register", data);
+
+// -------- DEFAULT EXPORT (IMPORTANT) --------
+export default api;
