@@ -37,7 +37,6 @@ exports.saveCycle = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
-
 // GET /api/cycle/latest
 exports.getLatestCycle = async (req, res) => {
   try {

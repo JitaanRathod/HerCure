@@ -22,6 +22,28 @@ const Cycle = () => {
   }, []);
 
   return (
+    <div className="py-8">
+
+      <h1 className="text-3xl font-semibold mb-8">
+        Menstrual Cycle
+      </h1>
+
+      <div className="space-y-6">
+
+        {/* 🔽 CURRENT CYCLE CARD 🔽 */}
+        <div className="hercure-card p-6">
+          <h2 className="text-lg font-semibold mb-4">
+            Current Cycle Status
+          </h2>
+
+          {/* existing cycle details */}
+        </div>
+
+        {/* 🔽 PREDICTIONS CARD 🔽 */}
+        <div className="hercure-card p-6">
+          <h2 className="text-lg font-semibold mb-4">
+            Upcoming Phases
+          </h2>
     <div style={{ maxWidth: "500px", margin: "auto" }}>
       <h2>Menstrual Cycle</h2>
 
@@ -38,6 +60,10 @@ const Cycle = () => {
       )}
 
       <CycleForm existingCycle={cycle} onSuccess={fetchLatestCycle} />
+    </div>
+    </div>
+
+    </div>
     </div>
   );
 };

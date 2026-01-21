@@ -32,6 +32,12 @@ const Register = () => {
   };
 
   return (
+    <div className="min-h-screen flex items-center justify-center">
+    <div className="hercure-card w-full max-w-md p-8">
+
+    <h2 className="text-2xl font-semibold text-center mb-6">
+      Create Your Account
+    </h2>
     <div>
       <h2>Register</h2>
 
@@ -64,6 +70,8 @@ const Register = () => {
 
         <button type="submit">Register</button>
       </form>
+    </div>
+    </div>
     </div>
   );
 };

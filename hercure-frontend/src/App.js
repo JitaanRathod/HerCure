@@ -9,6 +9,8 @@ import Lifestyle from "./pages/Lifestyle";
 
 function App() {
   return (
+    <div className="min-h-screen px-4 py-8 flex justify-center">
+    <div className="w-full max-w-6xl">
     <AuthProvider>
       <BrowserRouter>
         <Routes>
@@ -42,6 +44,8 @@ function App() {
         </Routes>
       </BrowserRouter>
     </AuthProvider>
+    </div>
+    </div>
   );
 }
 

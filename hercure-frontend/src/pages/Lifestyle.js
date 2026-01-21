@@ -29,6 +29,28 @@ const Lifestyle = () => {
   }, [fetchEntries]);
 
   return (
+    <div className="py-8">
+
+      <h1 className="text-3xl font-semibold mb-8">
+        Lifestyle & Wellness
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        {/* 🔽 LIFESTYLE CARD 🔽 */}
+        <div className="hercure-card p-6">
+          <h2 className="text-lg font-semibold mb-4">
+            Daily Habits
+          </h2>
+
+          {/* existing habit inputs / data */}
+        </div>
+
+        {/* 🔽 TIMELINE CARD 🔽 */}
+        <div className="hercure-card p-6">
+          <h2 className="text-lg font-semibold mb-4">
+            Wellness Timeline
+          </h2>
     <div style={{ maxWidth: "600px", margin: "auto" }}>
       <h2>Lifestyle & Symptoms</h2>
 
@@ -49,6 +71,10 @@ const Lifestyle = () => {
       ) : (
         <LifestyleTimeline entries={entries} />
       )}
+    </div>
+    </div>
+
+    </div>
     </div>
   );
 };

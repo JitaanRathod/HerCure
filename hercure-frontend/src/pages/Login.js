@@ -34,6 +34,11 @@ const Login = () => {
   };
 
   return (
+    <div className="min-h-screen flex items-center justify-center">
+    <div className="hercure-card w-full max-w-md p-8">
+    <h2 className="text-2xl font-semibold text-center mb-6">
+      Welcome Back
+    </h2>
     <div>
       <h2>Login</h2>
 
@@ -58,6 +63,12 @@ const Login = () => {
 
         <button type="submit">Login</button>
       </form>
+    <div className="mt-6 text-center text-sm">
+      <span className="opacity-70">Don’t have an account?</span>
+    </div>
+
+    </div>
+    </div>
     </div>
   );
 };
